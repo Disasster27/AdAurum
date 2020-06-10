@@ -123,6 +123,24 @@
                                 <p>Текст комментария</p>
                             </div>
                         </div>
+                        <div class="comments__item">
+                            <div class="comments__info">
+                                <span class="comments__author">User 1</span>
+                                <span class="comments__date">01.03.2020 14:55</span>
+                            </div>
+                            <div class="comments__text">
+                                <p>Текст комментария</p>
+                            </div>
+                        </div>
+                        <div class="comments__item">
+                            <div class="comments__info">
+                                <span class="comments__author">User 1</span>
+                                <span class="comments__date">01.03.2020 14:55</span>
+                            </div>
+                            <div class="comments__text">
+                                <p>Текст комментария</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="comments__new">
                         <h3>Добавить Комментарий</h3>
@@ -139,5 +157,6 @@
 </body>
 </html>
 
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab eaque delectus provident repellendus reprehenderit magnam dolor sapiente possimus porro praesentium accusantium rerum eius, dolorum corrupti, officia impedit id autem!
 
 

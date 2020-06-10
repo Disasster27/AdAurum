@@ -65,7 +65,7 @@
                     </div>
                 </a>
 
-                <div class="gg-close-r"></div>
+                <!-- <div class="gg-close-r"></div> -->
                 <div class="companies__item add">
                     <div class="add__cross"></div>  
                     
@@ -101,5 +101,6 @@
     <footer>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
