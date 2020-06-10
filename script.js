@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function get () {
         fetch('./server.php')
         .then(response => {
-            console.log('response:', response);
+            // console.log('response:', response);
             return response.json();
         })
         .then(data => render(data))
@@ -32,12 +32,51 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.add').insertAdjacentHTML('beforebegin', el);
         };
     };
-
+    const modal = document.querySelector('.fixed');
     document.querySelector('.add').addEventListener('click',event => {
-        console.log(event.target)
+        modal.classList.remove('invisible');
+    });
+    modal.addEventListener('click', event => {
+        if (event.target.classList.contains('fixed')) {
+            modal.classList.add('invisible');
+        };
+
+        
+    });
+    modal.querySelector('.modal__button').addEventListener('click', event => {
+        
+        
+        const object = {
+            title: modal.querySelector('#title').value.trim(),
+            inn: modal.querySelector('#inn').value.trim(),
+            info: modal.querySelector('#info').value,
+            gd: modal.querySelector('#gd').value.trim(),
+            address: modal.querySelector('#address').value.trim(),
+            tel: modal.querySelector('#tel').value.trim(),
+        };
+        console.log('object:', object);
+        addCompany (object);
+        modal.classList.add('invisible');
     })
-    function addCompany () {
+    function addCompany (companyInfo) {
+        console.log('companyInfo:', companyInfo)
+        let data = new FormData();
+                data.append("saveData", JSON.stringify(companyInfo));
+                console.log('data:', data);
+                fetch("./server.php",
+                    {
+                        method: "POST",
+                        // headers: {
+                        //     'Content-Type': 'application/json;charset=utf-8'
+                        // },
+                        // body: JSON.stringify(companyInfo),
+                        body: data,
+                    }
+                )
+                .then(response => console.log('Сообщение отправлено'))
+                .catch(error => console.error(error));
+    };
 
-    }
 
-})
+
+});

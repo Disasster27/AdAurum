@@ -25,7 +25,7 @@
     <main>
         <div class="container">
             <div class="companies" >
-                <a href="#" class="companies__item">
+                <!-- <a href="#" class="companies__item">
                     <div class=" company">
                         <div class="company__title">
                             <h3 class="title">Компания 1</h3>
@@ -63,7 +63,7 @@
                             +7(888)-233-22-11
                         </div>
                     </div>
-                </a>
+                </a> -->
 
                 <!-- <div class="gg-close-r"></div> -->
                 <div class="companies__item add">
@@ -82,8 +82,8 @@
                             <input id="inn" type="text" placeholder="ИНН" class="modal__input">
                             <label class="modal__label" for="info">Общая информация:</label>
                             <textarea id="info"  name="" id="" cols="30" rows="10" class="modal__input" placeholder="Общая информация"></textarea>
-                            <label class="modal__label" for="dir">Ген. директор:</label>
-                            <input id="dir" type="text" placeholder="Ген. дир." class="modal__input">
+                            <label class="modal__label" for="gd">Ген. директор:</label>
+                            <input id="gd" type="text" placeholder="Ген. дир." class="modal__input">
                             <label class="modal__label" for="address">Адрес:</label>
                             <input id="address" type="text" placeholder="Адрес" class="modal__input">
                             <label class="modal__label" for="tel">Телефон:</label>
