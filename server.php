@@ -40,3 +40,7 @@ if ($_POST['saveData']) {
 
     $result = mysqli_query($link, $sql) or die('Query failed: '.mysqli_error());
 };
+
+// if ($_GET['id']) {
+//     var_dump ($_GET['id']);
+// };

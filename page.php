@@ -1,3 +1,14 @@
+<?php
+    // print_r ($_GET['id']);
+
+    $link = mysqli_connect("localhost", "root", "", "adaurum") or die("Error:" . mysqli_connect_error());
+
+    $sql = "SELECT * FROM `companies` WHERE id='$_GET[id]'";
+    $result = mysqli_query($link, $sql) or die('Query failed: '.mysqli_error());
+    $data = mysqli_fetch_object($result);
+    // var_dump ($data);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +32,7 @@
                     <div class="field__body">
                         <div>
                             <h3 class="field__title">Название компании:</h3>
-                            <input id="title" type="text" placeholder="Название компании" class="modal__input" value="Название компании" readonly>
+                            <input id="title" type="text" placeholder="Название компании" class="modal__input" value="<?php echo $data->title;?>" readonly>
                         </div>
                         <div>
                             <img class="edit field__icon"  src="https://img.icons8.com/windows/32/000000/edit-row.png"/>
@@ -53,7 +64,7 @@
                     <div class="field__body">
                         <div>
                             <h3 class="field__title">ИНН:</h3>
-                            <input id="inn" type="text" placeholder="ИНН" class="modal__input" readonly>
+                            <input id="inn" type="text" placeholder="ИНН" class="modal__input" value="<?php echo $data->inn;?>" readonly>
                         </div>
                         <div>
                             <img class="edit field__icon" src="https://img.icons8.com/windows/32/000000/edit-row.png"/>
@@ -65,7 +76,7 @@
                     <div class="field__body">
                         <div>
                             <h3 class="field__title">Общая информация:</h3>
-                            <textarea id="info"  name="" cols="30" rows="10" class="modal__input" placeholder="Общая информация" readonly></textarea>
+                            <textarea id="info"  name="" cols="30" rows="10" class="modal__input" placeholder="Общая информация"  readonly><?php echo $data->info;?></textarea>
                         </div>
                         <div>
                             <img class="edit field__icon" src="https://img.icons8.com/windows/32/000000/edit-row.png"/>
@@ -77,7 +88,7 @@
                     <div class="field__body">
                         <div>
                             <h3 class="field__title">Ген. директор:</h3>
-                            <input id="dir" type="text" placeholder="Ген. дир." class="modal__input" readonly>
+                            <input id="dir" type="text" placeholder="Ген. дир." class="modal__input" value="<?php echo $data->gd;?>" readonly>
                         </div>
                         <div>
                             <img class="edit field__icon" src="https://img.icons8.com/windows/32/000000/edit-row.png"/>
@@ -89,7 +100,7 @@
                     <div class="field__body">
                         <div>
                             <h3 class="field__title">Адрес:</h3>
-                            <input id="address" type="text" placeholder="Адрес" class="modal__input" readonly>
+                            <input id="address" type="text" placeholder="Адрес" class="modal__input" value="<?php echo $data->address;?>" readonly>
                         </div>
                         <div>
                             <img class="edit field__icon" src="https://img.icons8.com/windows/32/000000/edit-row.png"/>
@@ -101,7 +112,7 @@
                     <div class="field__body">
                         <div>
                             <h3 class="field__title">Телефон:</h3>
-                            <input id="tel" type="text" placeholder="Телефон" class="modal__input" readonly>
+                            <input id="tel" type="text" placeholder="Телефон" class="modal__input" value="<?php echo $data->tel;?>" readonly>
                         </div>
                         <div>
                             <img class="edit field__icon" src="https://img.icons8.com/windows/32/000000/edit-row.png"/>
@@ -154,9 +165,8 @@
     <footer>
         <a href="https://icons8.com/icon/14552/comments">Comments icon by Icons8</a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
-
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab eaque delectus provident repellendus reprehenderit magnam dolor sapiente possimus porro praesentium accusantium rerum eius, dolorum corrupti, officia impedit id autem!
 
 

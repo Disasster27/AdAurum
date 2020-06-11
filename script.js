@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const element = data[key];
             console.log('element:', element)
             
-            const el = `<a id="${element.id}" href="#" class="companies__item">
+            const el = `<a id="${element.id}" href="page.php?id=${element.id}" class="companies__item">
                         <div class=" company">
                             <div class="company__title">
                                 <h3 class="title">${element.title} </h3>
