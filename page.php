@@ -6,7 +6,25 @@
     $sql = "SELECT * FROM `companies` WHERE id='$_GET[id]'";
     $result = mysqli_query($link, $sql) or die('Query failed: '.mysqli_error());
     $data = mysqli_fetch_object($result);
-    // var_dump ($data);
+
+    $commSql = "SELECT * FROM `commentaries` 
+                INNER JOIN users ON commentaries.id_user=users.id_user 
+                WHERE id_comp=1";
+    $commResult = mysqli_query($link, $commSql) or die('Query failed: '.mysqli_error());
+
+    // $comm = mysqli_fetch_object($commResult);
+    // var_dump ($comm);
+
+    $comm = new stdClass();
+
+    while ($data = mysqli_fetch_object($commResult)) {
+        
+        $key = $data->id_comm;
+        $comm->$key = $data;
+        // var_dump ($commResult);
+    };
+    
+    var_dump ($comm);
 ?>
 
 <!DOCTYPE html>
